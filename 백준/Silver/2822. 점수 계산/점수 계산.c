@@ -16,7 +16,7 @@ int main()
     Test test[8];
 
     // 문제 번호 오름차순 정렬용 배열
-    int top[8];
+    int top[5];
 
     // 각 점수 입력
     for (int i = 0; i < 8; i++)
@@ -26,7 +26,7 @@ int main()
     }
     Test temp;
     // 점수 높은 순서로 정렬
-    for (int i = 0; i < 8; i++)
+    for (int i = 0; i < 7; i++)
     {
         for (int j = 0; j < 7 - i;j++)
         {
@@ -38,10 +38,12 @@ int main()
             }
         }
     }
-
+    // top 5 합
+    int sum = 0;
     for (int i = 0; i < 5; i++)
     {
         top[i] = test[i].num;
+        sum += test[i].score;
     }
     int num_temp;
     for (int i = 0; i < 5; i++) {
@@ -53,18 +55,11 @@ int main()
             }
         }
     }
-    // top 5 합
-    int sum = 0;
-    for (int i = 0; i < 5; i++)
-    {
-        sum += test[i].score;
-    }
-    printf("%d ", sum);
+    printf("%d\n", sum);
 
     for (int i = 0; i < 5; i++)
     {
         printf("%d ", top[i]);
     }
-    
     return 0;
 }
